@@ -1,8 +1,11 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const isProd = process.env.NODE_ENV === 'production';
+const repoName = 'Task-list';
+
 module.exports = {
-  mode: 'development',
+  mode: isProd ? 'production' : 'development',
 
   entry: path.resolve(__dirname, 'src/index.tsx'),
 
@@ -10,7 +13,7 @@ module.exports = {
     filename: 'index.[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
-    publicPath: '/',
+    publicPath: isProd ? `/${repoName}/` : '/',
   },
 
   resolve: {
@@ -45,60 +48,28 @@ module.exports = {
               sourceMap: true,
             },
           },
-          {
-            loader: 'sass-loader',
-            options: {
-              sourceMap: true,
-              webpackImporter: true,
-              sassOptions: {
-                includePaths: [path.resolve(__dirname, 'src')],
-              },
-            },
-          },
+          'sass-loader',
         ],
       },
-
-      // Глобальные SCSS
       {
         test: /\.s[ac]ss$/i,
         exclude: /\.module\.s[ac]ss$/i,
-        use: [
-          'style-loader',
-          'css-loader',
-          {
-            loader: 'sass-loader',
-            options: {
-              sourceMap: true,
-              webpackImporter: true,
-              sassOptions: {
-                includePaths: [path.resolve(__dirname, 'src')],
-              },
-            },
-          },
-        ],
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
-
-      // Изображения
       {
         test: /\.(png|jpe?g|gif|svg)$/i,
         type: 'asset/resource',
       },
-
-      // Шрифты
       {
         test: /\.(woff2?|eot|ttf|otf)$/i,
         type: 'asset/resource',
       },
-
-      // JS/JSX (если используется Babel)
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env', '@babel/preset-react'],
-          },
+          options: { presets: ['@babel/preset-env', '@babel/preset-react'] },
         },
       },
     ],
@@ -108,6 +79,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './public/index.html',
       favicon: './public/favicon.ico',
+      publicPath: isProd ? `/${repoName}/` : '/',
     }),
   ],
 
@@ -122,5 +94,5 @@ module.exports = {
     hot: true,
   },
 
-  devtool: 'source-map',
+  devtool: isProd ? false : 'source-map',
 };
