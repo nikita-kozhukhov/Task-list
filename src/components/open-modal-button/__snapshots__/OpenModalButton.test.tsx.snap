@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`OpenModalButton совпадает с предыдущей версией снапшота 1`] = `
+<div>
+  <div
+    class="open-modal-button"
+  >
+    <button
+      class="button button--primary"
+      type="button"
+    >
+      Создать задачу
+    </button>
+  </div>
+</div>
+`;

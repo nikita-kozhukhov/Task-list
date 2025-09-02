@@ -1,0 +1,18 @@
+@use 'styles/variables' as *;
+@use 'styles/mixins' as *;
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: $overlay-color;
+  @include flex-top;
+  padding-top: 20rem;
+}
+
+.modal {
+  width: 50%;
+  background-color: $color-orange-secondary;
+  border: 0.2rem solid;
+  border-radius: 1rem;
+  @include flex-top;
+}

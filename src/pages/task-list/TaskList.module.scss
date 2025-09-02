@@ -1,0 +1,12 @@
+@use 'styles/variables' as *;
+
+.task-list {
+  background-color: $background-color-secondary;
+  box-shadow: 0 0 20px black;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  padding: 3rem 8rem 8rem;
+}

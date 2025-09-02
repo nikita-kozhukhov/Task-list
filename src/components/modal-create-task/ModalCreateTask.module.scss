@@ -1,0 +1,22 @@
+@use 'styles/variables' as *;
+@use 'styles/mixins' as *;
+
+.create-task {
+  @include flex-column-top;
+  width: 100%;
+
+  &--container {
+    @include flex-column-top;
+    width: 100%;
+  }
+
+  &--title {
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+    font-size: 5rem;
+  }
+
+  &--close-button {
+    margin: 10rem 0 5rem;
+  }
+}

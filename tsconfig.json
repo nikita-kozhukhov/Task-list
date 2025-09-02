@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "jsx": "react-jsx",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmitOnError": true,
+    "isolatedModules": true,
+    "resolveJsonModule": true,
+    "baseUrl": "./src",
+    "paths": {
+      "components/*": ["components/*"],
+      "pages/*": ["pages/*"],
+      "constants/*": ["constants/*"],
+      "assets/*": ["assets/*"],
+      "ui/*": ["ui/*"],
+      "store/*": ["store/*"],
+      "styles/*": ["assets/styles/*"]
+    },
+    "outDir": "./dist"
+  },
+  "include": ["src", "src/types"],
+  "exclude": ["node_modules", "dist", "build"]
+}

@@ -1,0 +1,21 @@
+@use 'styles/variables' as *;
+
+.button {
+  cursor: pointer;
+  font-size: $font-size-big;
+  font-weight: bold;
+  padding: 1rem 3rem;
+  border-radius: 1rem;
+
+  &--primary {
+    background-color: $color-orange-primary;
+  }
+
+  &--secondary {
+    background-color: $color-creen-primary;
+  }
+
+  &--disabled {
+    background-color: $color-gray;
+  }
+}

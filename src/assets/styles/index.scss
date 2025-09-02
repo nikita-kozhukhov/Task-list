@@ -1,0 +1,17 @@
+@use './variables' as *;
+@use './mixins' as *;
+@use './App.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  // font-family: 'Segoe UI', sans-serif;
+  background-color: $background-color;
+}

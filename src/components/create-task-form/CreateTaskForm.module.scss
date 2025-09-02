@@ -1,0 +1,50 @@
+@use 'styles/variables' as *;
+@use 'styles/mixins' as *;
+
+.form {
+  @include flex-column-top;
+  width: 100%;
+  gap: 2rem;
+
+  &--label {
+    @include flex-column-top;
+    width: 100%;
+    gap: 0.5rem;
+    font-size: $font-size-extra-big;
+  }
+
+  &--input {
+    font-size: $font-size-middle;
+    width: 80%;
+    padding: 1rem;
+    border: 0.1rem solid $black-color;
+    border-radius: 0.5rem;
+    outline: none;
+
+    &__error {
+      border: 0.2rem solid $color-red;
+    }
+  }
+
+  &--textarea {
+    font-size: $font-size-middle;
+    width: 80%;
+    padding: 1rem;
+    border: 0.1rem solid;
+    border-radius: 0.5rem;
+    resize: none;
+    outline: none;
+  }
+
+  &--submit {
+    margin-top: 2rem;
+  }
+
+  &--error-message {
+    font-size: $font-size-big;
+    font-weight: bold;
+    color: $color-red;
+    position: relative;
+    top: -1rem;
+  }
+}

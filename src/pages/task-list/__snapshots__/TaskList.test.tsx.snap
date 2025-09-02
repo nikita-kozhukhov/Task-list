@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`TaskList TaskList snapshot 1`] = `
+<DocumentFragment>
+  <section
+    class="task-list"
+  >
+    <h1
+      class="main-header"
+    >
+      Создать задачу
+    </h1>
+    <div
+      class="open-modal-button"
+    >
+      <button
+        class="button button--primary"
+        type="button"
+      >
+        Создать задачу
+      </button>
+    </div>
+    <div
+      class="tasks-container"
+    />
+  </section>
+</DocumentFragment>
+`;
