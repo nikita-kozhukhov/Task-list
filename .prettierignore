@@ -1,0 +1,6 @@
+node_modules/
+dist/
+documentation/
+package-lock.json
+public/
+.prettierrc
