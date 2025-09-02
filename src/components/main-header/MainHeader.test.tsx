@@ -5,7 +5,7 @@ describe('MainHeader', () => {
   test('отображает корректный заголовок', () => {
     render(<MainHeader />);
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(
-      'Создать задачу'
+      'Лист задач'
     );
   });
 
